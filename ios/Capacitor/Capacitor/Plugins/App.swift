@@ -71,26 +71,6 @@ public class CAPAppPlugin : CAPPlugin {
       ])
     }
   }
-
-  @objc func canOpenUrl(_ call: CAPPluginCall) {
-    guard let urlString = call.getString("url") else {
-      call.error("Must supply a URL")
-      return
-    }
-    
-    guard let url = URL.init(string: urlString) else {
-      call.error("Invalid URL")
-      return
-    }
-
-    DispatchQueue.main.async {
-      let canOpen = UIApplication.shared.canOpenURL(url)
-      
-      call.success([
-        "value": canOpen
-      ])
-    }
-  }
   
   @objc func openUrl(_ call: CAPPluginCall) {
     guard let urlString = call.getString("url") else {

@@ -69,15 +69,6 @@ public class App extends Plugin {
     call.success(data);
   }
 
-  @PluginMethod
-  public void canOpenUrl(PluginCall call) {
-    // Note: Usual functionality removed to satisfy Google privacy rules. Temporary patch.
-    JSObject ret = new JSObject();
-
-    ret.put("value", false);
-    call.success(ret);
-  }
-
   @PluginMethod()
   public void openUrl(PluginCall call) {
     String url = call.getString("url");

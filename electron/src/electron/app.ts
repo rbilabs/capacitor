@@ -16,9 +16,6 @@ export class AppPluginElectron extends WebPlugin implements AppPlugin {
     w && w.close();
     throw new Error('App quit');
   }
-  canOpenUrl(_options: { url: string; }): Promise<{ value: boolean; }> {
-    return Promise.resolve({ value: true });
-  }
   openUrl(options: { url: string; }): Promise<{ completed: boolean; }> {
     shell.openExternal(options.url);
     return Promise.resolve({ completed: true });

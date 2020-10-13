@@ -18,10 +18,6 @@ export class AppPluginWeb extends WebPlugin implements AppPlugin {
     throw new Error('Method not implemented.');
   }
 
-  canOpenUrl(_options: { url: string; }): Promise<{ value: boolean; }> {
-    return Promise.resolve({ value: true });
-  }
-
   openUrl(_options: { url: string; }): Promise<{ completed: boolean; }> {
     return Promise.resolve({ completed: true });
   }

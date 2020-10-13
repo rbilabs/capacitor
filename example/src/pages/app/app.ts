@@ -36,11 +36,6 @@ export class AppPage {
     });
   }
 
-  async canOpenUrl() {
-    const ret = await Plugins.App.canOpenUrl({ url: 'com.getcapacitor.myapp' });
-    console.log('Can open url: ', ret.value);
-  }
-
   async openUrl() {
     const ret = await Plugins.App.openUrl({ url: 'com.getcapacitor.myapp://page?id=ionicframework' });
     console.log('Open url response: ', ret);

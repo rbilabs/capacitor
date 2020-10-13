@@ -97,10 +97,6 @@ export interface AppPlugin extends Plugin {
    * Ionic handles this itself so you shouldn't need to call this if using Ionic
    */
   exitApp(): never;
-  /**
-   * Check if an app can be opened with the given URL
-   */
-  canOpenUrl(options: { url: string }): Promise<{value: boolean}>;
 
   /**
    * Open an app with the given URL
